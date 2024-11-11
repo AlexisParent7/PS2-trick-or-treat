@@ -1,0 +1,28 @@
+---
+title: "PS2 feedback"
+format: html
+editor: visual
+---
+
+## PS2 Feedback
+
+You did not set up your workspace with a code folder (I created one).
+
+I'd like to see you work to provide more commentary about the output of your code chunks. For example, what did you learn running `glimpse()` on your data? What would you want to remember/note as interesting for "future you." Your qmd file should stand alone - you should be able to understand the why for your choices and what their output means without having to look elsewhere.
+
+`View()` is not one of the functions we learned for learning more about our data. We used `glimpse()`, `str()`, `head()`, `tail()`. View just opens the data tab.
+
+Why did you change the column heading? There is no reason not to, but again, your thought process is not documented in your code.  Also, line 29 `#change column headings` is really telling what you are doing and is not explaining the mechanics of the code, so that comment should be outside of the code chunk.
+
+Your line 67 won't run because you changed the column name for `Costume_type` to `costume_type` in line 30 so R can't find `Costume_type`. This error is perpetuated in the next several lines. 
+
+Line 88 won't run because again, you got rid of the `Costume_type` column with your code on line 30.
+
+If I disreagard line 30, your code runs fine. But I had no way of knowing I should do that. Don't include code if it isn't being used.
+
+Your instructions on line 106 belong outside of the code chunk. Same for line 121. Use comments inside of code chunks to explain HOW the code is working. for example:
+
+```{r}
+my_mean <- mean(somevariable, na.rm = T) #na.rm = T tells R to disregard cases that are NA
+```
+
